@@ -1,0 +1,16 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${BACKEND_PORT}:4000"
+    environment:
+      - INSTANCE_ID=${INSTANCE_ID}
+      - BACKEND_PORT=${BACKEND_PORT}
+    networks:
+      - middleware-app-network
+
+networks:
+  discovery-server_app-network:
+    external: true
