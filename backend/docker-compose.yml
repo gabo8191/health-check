@@ -9,8 +9,9 @@ services:
       - INSTANCE_ID=${INSTANCE_ID}
       - BACKEND_PORT=${BACKEND_PORT}
     networks:
-      - middleware-app-network
+      - middelware_app-network # Cambia el nombre de la red para que coincida
 
 networks:
-  discovery-server_app-network:
+  middelware_app-network:
+    # Asegúrate de que la red coincida con la del otro archivo
     external: true
